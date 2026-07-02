@@ -20,4 +20,4 @@ app.add_url_rule("/login","login",login,methods = ["get","post"])
 app.add_url_rule("/register","register",register,methods = ["get","post"])
 app.add_url_rule("/panel","panel",admin,methods = ["get","post"])
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,host = "0.0.0.0")
