@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class = "container">
+        <table style="margin: 40px;">
+            <tr>
+                <th>username</th>
+                <th>email</th>
+                <th>picture</th>
+                <th>admin level</th>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td><img width="40" height="40" src = "{{user.picture_url}}"></td>
+                <td>{{user.admin.admin_level}}</td>
+                <td>
+                    <a class = "btn btn-danger" href="/delete/user/{{user.id}}">Delete User</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <p style="color:red" >{{message}}</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container d-flex items-align-center justify-content-center text-center">
+    <h1>Hello {{current_user.username}}</h1><br>
+    <form method="post" class = "mt-5">
+        <br>
+        <select id = "userid" name = "userid">
+            {% for user in users %}
+            <option value="{{user.id}}">{{user.username}}</option>
+            {% endfor %}
+        </select>
+            <label>change username</label>
+            <input type="text" name = "username" id = "username"><br><br>
+            <label>change email</label>
+            <input type="text" name = "email" id = "email"><br><br>
+            <label>change password</label>
+            <input type="text" name = "password" id = "password"><br><br>
+            <label>change profile picture</label>
+            <input type="text" name = "url" id = "url"><br><br>
+            <button type = "submit">save changies</button>
+            <a class = 'btn btn-danger' href="/delete/user">Delete User</a>
+    </form>
+
+</div>
+{% endblock %}
